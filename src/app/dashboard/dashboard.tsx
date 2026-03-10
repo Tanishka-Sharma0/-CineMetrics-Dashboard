@@ -1,3 +1,24 @@
+import { filter } from "framer-motion/client";
+import FilterBar from "../../components/filters/FilterBar";
+import { useFilters } from "../../context/FilterContext";
+
+
 export default function Dashboard() {
-    return <h1 className="text-2xl font-bold">Dashboard</h1>;
+    const { filters } = useFilters();
+    return (
+        <div className="space-y-6">
+            <FilterBar />
+
+            <div className="card">
+                <h2 className="text-lg font-semibold mb-2">
+                    Active Filters
+                </h2>
+
+                <pre>
+                    {JSON.stringify(filters, null, 2)}
+                </pre>
+            </div>
+
+        </div >
+    );
 }
