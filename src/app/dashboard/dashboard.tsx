@@ -3,22 +3,21 @@ import FilterBar from "../../components/filters/FilterBar";
 import { useFilters } from "../../context/FilterContext";
 import KpiGrid from "./widgets/KpiGrid";
 
+import GenreChart from "../../charts/BarChart";
+import RatingChart from "../../charts/LineChart";
+import LanguageChart from "../../charts/PieChart";
+
 export default function Dashboard() {
     const { filters } = useFilters();
     return (
         <div className="space-y-6">
             <FilterBar />
             <KpiGrid />
-            <div className="card">
-                <h2 className="text-lg font-semibold mb-2">
-                    Active Filters
-                </h2>
-
-                <pre>
-                    {JSON.stringify(filters, null, 2)}
-                </pre>
+            <div className="grid gap-6 lg:grid-cols-2">
+                <GenreChart />
+                <LanguageChart />
             </div>
-
+            <RatingChart />
         </div >
     );
 }
