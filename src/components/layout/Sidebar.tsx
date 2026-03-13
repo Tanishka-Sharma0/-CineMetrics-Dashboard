@@ -11,7 +11,7 @@ export default function Sidebar() {
     return (
         <aside className="w-64 bg-[var(--color-card)] min-h-screen p-5 border-r">
             <h2 className="text-xl font-bold mb-8">🎬 CineMetrics</h2>
-            <nav className="flex flex-col gap-2">
+            <nav className="flex flex-col gap-2 relative">
                 {links.map((link) => (
                     <NavLink
                         key={link.label}
