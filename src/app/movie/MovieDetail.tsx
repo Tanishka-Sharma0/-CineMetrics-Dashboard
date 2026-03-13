@@ -1,3 +1,14 @@
+import MovieHero from "./sections/MovieHero";
+import CastCarousel from "./sections/CastCarousel";
+import SimilarMovies from "./sections/SimilarMovies";
+
+
 export default function MovieDetail() {
-    return <h1 className="text-2xl font-bold">Movie Detail</h1>;
+    return (
+        <div className="space-y-8">
+            <MovieHero />
+            <CastCarousel />
+            <SimilarMovies />
+        </div>
+    );
 }
